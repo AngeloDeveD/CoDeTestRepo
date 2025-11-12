@@ -12,206 +12,258 @@
 </head>
 
 <body>
-    <div class="headerPanelContainer">
-        <div class="headerLeftPanel">
-            <img class="headerLogo"></img>
+    <!--Верхняя часть сайта-->
+    <header class="header">
+        <div class="container header__row">
+          <a class="logo" href="/">
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="CoDe">
+          </a>
+      
+          <nav class="nav">
+            <a href="#learn">Чему вы научитесь</a>
+            <a href="#process">Процесс обучения</a>
+            <a href="#price">Стоимость</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+      
+          <a class="phone" href="tel:+74993489396">+7 (499) 348 93 96</a>
+      
+          <button class="burger" aria-label="Открыть меню"><span></span></button>
         </div>
-        <div class="headerLeftPanel">
-            <button class="headerLeftPanel__button">Чему вы научитесь</button>
-        </div>
-        <div class="headerLeftPanel">
-            <button class="headerLeftPanel__button">Процесс обучения</button>
-        </div>
-        <div class="headerLeftPanel">
-            <button class="headerLeftPanel__button">Стоимость</button>
-        </div>
-        <div class="headerLeftPanel">
-            <button class="headerLeftPanel__button">Контакты</button>
-        </div>
-        <div class="headerRightPanel">
-            <button class="headerRightPanel__phone" onclick="copyNumber()">+7 (499) 348 93 96</button>
-        </div>
-    </div>
-    <div class="bannerContainer swiper-container">
-        <div class="bannerWrapper swiper-wrapper">
-            <div class="bannerContent swiper-silde">
-                <div class="BannerContent">
-                    <div class="BannerContent__title">
-                        <h2 class="BannerContent__title-text">Школа программирования<br>для тех, кому нужны<br>реальные навыки,<br>а не просто сертификат</h2>
-                    </div>
-                    <div class="BannerContent__description">
-                        <h2 class="BannerContent__description-text">Закажите звонок, и наш специалист свяжется с<br>вами в ближайшее время</h2>
-                        <button class="BannerContent__button" onclick="callMe()">Заказать звонок</button>
-                    </div>
-                    <div class="BannerContent__img-container">
-                        <img class="BannerContent__img" src="{{url_for('static', filename="img/banner1.svg")}}" alt="">
-                    </div>
+      </header>
+    
+    <!-- Мобильное меню -->
+    <aside class="mobileMenu" id="mobileMenu">
+        <button class="mobileMenu__close" aria-label="Закрыть">×</button>
+            <nav>
+                <a href="#learn">Чему вы научитесь</a>
+                <a href="#process">Процесс обучения</a>
+                <a href="#price">Стоимость</a>
+                <a href="#contacts">Контакты</a>
+                <a href="#register">Регистрация</a>
+            </nav>
+        </button>
+    </aside>
+    <!--Баннер слайдер-->
+    <section class="banner">
+        <div class="container">
+          <div class="swiper banner__swiper">
+            <div class="swiper-wrapper">
+              <!-- slide 1 -->
+              <div class="swiper-slide">
+                <div class="slide">
+                  <div class="slide__left">
+                    <h2>Школа <span class="curly">{программирования}</span><br>для тех, кому нужны<br>реальные навыки,<br>а не просто сертификат</h2>
+                    <p>Закажите звонок, и наш специалист свяжется с вами в ближайшее время</p>
+                    <button class="btn" data-open-modal>Заказать звонок</button>
+                  </div>
+                  <div class="slide__right BannerContent__img-container">
+
+                    <img class="laptop" src="{{ url_for('static', filename='img/banner1.svg') }}" alt="">
+                  </div>
                 </div>
-                <div class="BannerContent">
-                    <div class="BannerContent__title">
-                        <h2 class="BannerContent__title-text">Обучение<br>через практику</h2>
-                    </div>
-                    <div class="BannerContent__description">
-                        <h2 class="BannerContent__description-text">Всё что вы узнали, вы тут же начинаете<br>применять на практике. Вы сразу видите<br>результаты своего труда.</h2>
-                        <button class="BannerContent__button" onclick="callMe()">Заказать звонок</button>
-                    </div>
-                    <div class="BannerContent__img-container">
-                        <img class="BannerContent__img" src="{{url_for('static', filename="img/banner2.svg")}}" alt="">
-                    </div>
+              </div>
+      
+              <!-- slide 2 -->
+              <div class="swiper-slide">
+                <div class="slide">
+                  <div class="slide__left">
+                    <h2>Обучение<br>через практику</h2>
+                    <p>Всё что вы узнали, вы тут же начинаете применять на практике. Вы сразу видите результаты своего труда.</p>
+                    <button class="btn" data-open-modal>Заказать звонок</button>
+                  </div>
+                  <div class="slide__right BannerContent__img-container">
+                    <img class="laptop" src="{{ url_for('static', filename='img/banner2.svg') }}" alt="">
+                  </div>
                 </div>
-                <div class="BannerContent">
-                    <div class="BannerContent__title">
-                        <h2 class="BannerContent__title-text">Весь материал разбит на<br>небольшие уроки</h2>
-                    </div>
-                    <div class="BannerContent__description">
-                        <h2 class="BannerContent__description-text">Теория и практика подаются маленькими<br>порциями. Так вам будет легче усваивать новые<br>знания.</h2>
-                        <button class="BannerContent__button" onclick="callMe()">Заказать звонок</button>
-                    </div>
-                    <div class="BannerContent__img-container">
-                        <img class="BannerContent__img" src="{{url_for('static', filename="img/banner3.svg")}}" alt="">
-                    </div>
+              </div>
+      
+              <!-- slide 3 -->
+              <div class="swiper-slide">
+                <div class="slide">
+                  <div class="slide__left">
+                    <h2>Весь материал разбит на<br>небольшие уроки</h2>
+                    <p>Теория и практика подаются маленькими порциями. Так легче усваивать новые знания.</p>
+                    <button class="btn" data-open-modal>Заказать звонок</button>
+                  </div>
+                  <div class="slide__right BannerContent__img-container">
+                    <img class="laptop" src="{{ url_for('static', filename='img/banner3.svg') }}" alt="">
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
-    </div>
-    <div class="footerContainer">
-        <div class="footerTitleContainer">
-            <h1 class="footerTitleText">
-                Обучение в CoDe - это<br>удобно и результативно
-            </h1>
+      </section>
+    <!--Информационные блоки сайта-->
+    <section class="features" id="learn">
+        <div class="container">
+          <h2 class="section-title">Обучение в CoDe — это удобно и результативно</h2>
+      
+          <div class="features__grid">
+            <article class="feature">
+              <img src="{{ url_for('static', filename='img/tutorial_logo1.svg') }}" alt="">
+              <h3>Огромное количество практики</h3>
+              <p>Более 500 самостоятельных заданий и 20 полноценных больших проектов</p>
+            </article>
+      
+            <article class="feature">
+              <img src="{{ url_for('static', filename='img/tutorial_logo2.svg') }}" alt="">
+              <h3>Современные методики обучения</h3>
+              <p>Спиральное обучение: погружаемся в материал постепенно, виток за витком</p>
+            </article>
+      
+            <article class="feature">
+              <img src="{{ url_for('static', filename='img/tutorial_logo3.svg') }}" alt="">
+              <h3>Простое и понятное изложение</h3>
+              <p>Вместо заумных терминов – примеры из реального мира</p>
+            </article>
+      
+            <article class="feature">
+              <img src="{{ url_for('static', filename='img/tutorial_logo4.svg') }}" alt="">
+              <h3>Гибкий график занятий</h3>
+              <p>Учитесь в любое время в удобном для вас темпе</p>
+            </article>
+      
+            <article class="feature">
+              <img src="{{ url_for('static', filename='img/tutorial_logo5.svg') }}" alt="">
+              <h3>Прямая связь с опытными программистами</h3>
+              <p>Задавайте вопросы и отправляйте свой код на проверку</p>
+            </article>
+      
+            <article class="feature">
+              <img src="{{ url_for('static', filename='img/tutorial_logo6.svg') }}" alt="">
+              <h3>Оплата небольшими частями</h3>
+              <p>Платите только за тот материал, который сейчас изучаете</p>
+            </article>
+      
+            <article class="feature">
+              <img src="{{ url_for('static', filename='img/tutorial_logo7.svg') }}" alt="">
+              <h3>Быстрый и легкий возврат</h3>
+              <p>Если передумаете — вернем деньги за 3 рабочих дня</p>
+            </article>
+          </div>
         </div>
-        <div class="footerContentContainer">
-            <div class="footerContentItem">
-                <img src="{{url_for('static', filename="img/tutorial_logo1.svg")}}" class="footerContentItem__img">
-                <h3 class="footerContentItem__title"><
-                    Огромное количество практики
-                </h3>
-                <p class="footerContentItem__description">
-                    Более 500 самостоятельных заданий и 20 полноценных больших проектов
-                </p>
+      </section>
+    <!--Модальное окно обратной связи-->
+    <section class="help" id="process">
+        <div class="container">
+          <div class="help__row">
+            <img src="{{ url_for('static', filename='img/help1.png') }}" alt="">
+            <div>
+              <h3>Помощь и поддержка</h3>
+              <p>Если в процессе обучения возникнут сложности...</p>
             </div>
-            <div class="footerContentItem">
-                <img src="{{url_for('static', filename="img/tutorial_logo2.svg")}}" class="footerContentItem__img">
-                <h3 class="footerContentItem__title"><
-                    Современные методики обучения
-                </h3>
-                <p class="footerContentItem__description">
-                    Спиральное обучение: погружаемся в материал постепенно, виток за витком
-                </p>
+          </div>
+      
+          <div class="help__row help__row--reverse">
+            <div>
+              <h3>Методика обучения</h3>
+              <p>Весь учебный материал структурирован по принципу спирального обучения…</p>
             </div>
-            <div class="footerContentItem">
-                <img src="{{url_for('static', filename="img/tutorial_logo3.svg")}}" class="footerContentItem__img">
-                <h3 class="footerContentItem__title"><
-                    Простое и понятное изложение
-                </h3>
-                <p class="footerContentItem__description">
-                    Вместо заумных терминов – примеры из реального мира
-                </p>
-            </div>
-            <div class="footerContentItem">
-                <img src="{{url_for('static', filename="img/tutorial_logo4.svg")}}" class="footerContentItem__img">
-                <h3 class="footerContentItem__title"><
-                    Гибкий график занятий
-                </h3>
-                <p class="footerContentItem__description">
-                    Учитесь в любое время в удобном для вас темпе
-                </p>
-            </div>
-            <div class="footerContentItem">
-                <img src="{{url_for('static', filename="img/tutorial_logo5.svg")}}" class="footerContentItem__img">
-                <h3 class="footerContentItem__title"><
-                    Прямая связь с опытными программистами
-                </h3>
-                <p class="footerContentItem__description">
-                    Задавайте вопросы и отправляйте свой код на проверку
-                </p>
-            </div>
-            <div class="footerContentItem">
-                <img src="{{url_for('static', filename="img/tutorial_logo6.svg")}}" class="footerContentItem__img">
-                <h3 class="footerContentItem__title"><
-                    Оплата небольшими частями
-                </h3>
-                <p class="footerContentItem__description">
-                    Платите только за тот материал, который сейчас изучаете, а не за весь курс сразу
-                </p>
-            </div>
-            <div class="footerContentItem">
-                <img src="{{url_for('static', filename="img/tutorial_logo7.svg")}}" class="footerContentItem__img">
-                <h3 class="footerContentItem__title"><
-                    Быстрый и легкий возврат
-                </h3>
-                <p class="footerContentItem__description">
-                    Если передумаете учиться – вернем деньги за 3 рабочих дня
-                </p>
-            </div>
+            <img src="{{ url_for('static', filename='img/help2.png') }}" alt="">
+          </div>
         </div>
-    </div>
-    <div class="help_container">
-        <div class="helpImageContainer">
-            <img src="" class="helpImage">
+      </section>
+    <!--Галерея фотографий-->
+    <section class="gallery">
+        <div class="container gallery__grid">
+          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g1.png') }}"><img src="{{ url_for('static', filename='img/g1.png') }}" alt=""></a>
+          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g2.png') }}"><img src="{{ url_for('static', filename='img/g2.png') }}" alt=""></a>
+          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g3.png') }}"><img src="{{ url_for('static', filename='img/g3.png') }}" alt=""></a>
+          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g4.png') }}"><img src="{{ url_for('static', filename='img/g4.png') }}" alt=""></a>
+          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g5.png') }}"><img src="{{ url_for('static', filename='img/g5.png') }}" alt=""></a>
         </div>
-        <div class="helpTextContainer">
-            <h3 class="helpText"></h3>
+      </section>
+    <!--Интерактивная карта-->
+    <section class="map" id="contacts">
+        <div class="container">
+          <div id="map" class="map__canvas" aria-label="Карта"></div>
         </div>
+      </section>
+    <!-- ВЕРХНЯЯ ЧАСТЬ ПОДВАЛА -->
+<div class="footerContainer">
+    <div class="footerLeftContainer">
+      <div class="footerLeftContent__upper">
+        <img src="/static/img/logo-code.svg" class="footerLeftContent__upper-icon" alt="CoDe">
+        <h2 class="footerLeftContent__upper-title">Школа программирования</h2>
+      </div>
+  
+      <div class="footerLeftContent__downer">
+        <button class="footerLeftContent__downer-button" aria-label="Instagram">
+          <img src="/static/img/ico-inst.svg" class="footerLeftContent__downer-button-icon" alt="">
+        </button>
+        <button class="footerLeftContent__downer-button" aria-label="VK">
+          <img src="/static/img/ico-vk.svg" class="footerLeftContent__downer-button-icon" alt="">
+        </button>
+        <button class="footerLeftContent__downer-button" aria-label="Facebook">
+          <img src="/static/img/ico-fb.svg" class="footerLeftContent__downer-button-icon" alt="">
+        </button>
+        <button class="footerLeftContent__downer-button" aria-label="YouTube">
+          <img src="/static/img/ico-yt.svg" class="footerLeftContent__downer-button-icon" alt="">
+        </button>
+      </div>
+  
+      <div class="footerRightContent">
+        <button class="footerRightContent__button" data-href="#learn">Чему вы научитесь</button>
+        <button class="footerRightContent__button" data-href="#process">Процесс обучения</button>
+        <button class="footerRightContent__button" data-href="#price">Стоимость</button>
+        <button class="footerRightContent__button" data-href="#contacts">Контакты</button>
+        <button class="footerRightContent__button" data-href="#register">Регистрация</button>
+      </div>
+  
+      <div class="footerRightContent">
+        <button class="footerRightContent__button footerRightContent__phone"
+                onclick="copyNumber()">+7 (999) 999 99 99</button>
+        <p class="footerRightContent__button-text">
+          <a href="mailto:info@code.ru">info@code.ru</a>
+        </p>
+      </div>
     </div>
-    <div class="help_container">
-        <div class="helpTextContainer">
-            <h3 class="helpText"></h3>
+  </div>
+  
+  <!-- НИЖНЯЯ ПОЛОСА ПОДВАЛА -->
+  <div class="footerBottomContainer">
+    <p class="footerBottomContent__text">© 2023 — Все права защищены</p>
+    <p class="footerBottomContent__text"><a href="#">Пользовательское соглашение</a></p>
+    <p class="footerBottomContent__text"><a href="#">Политика конфиденциальности</a></p>
+  </div>
+  
+
+    <!--Модальное окно «Заказать звонок»-->
+    <div class="modal" id="callbackModal" aria-hidden="true">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__dialog" role="dialog" aria-modal="true">
+          <button class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+          <h2>Заказать звонок</h2>
+      
+          <form id="callbackForm" class="form">
+            <label>Имя
+              <input name="name" type="text" placeholder="Ваше имя" required>
+            </label>
+            <label>Телефон
+              <input name="phone" type="tel" placeholder="+7 XXX XXX-XX-XX" required>
+            </label>
+            <label>Email
+              <input name="email" type="email" placeholder="mail@site.com">
+            </label>
+            <label>Сообщение
+              <textarea name="msg" rows="4" placeholder="Ваше сообщение…"></textarea>
+            </label>
+      
+            <p class="form__agree">Нажимая «Отправить», вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+            <button type="submit" class="btn btn--lg">Отправить</button>
+          </form>
         </div>
-        <div class="helpImageContainer">
-            <img src="" class="helpImage">
-        </div>
-    </div>
-    <div class="ImagesContainer">
-        <img src="" class="ImagesContainer__img">
-        <img src="" class="ImagesContainer__img">
-        <img src="" class="ImagesContainer__img">
-        <img src="" class="ImagesContainer__img">
-        <img src="" class="ImagesContainer__img">
-    </div>
-    <div class="YandexMapContainer">
-        <!--Далее будет добавлена Yandex Map API-->
-    </div>
-    <div class="footerContainer">
-        <div class="footerLeftContainer">
-            <div class="footerLeftContent__upper">
-                <img src="" class="footerLeftContent__upper-icon">
-                <h2 class="footerLeftContent__upper-title">Школа программирования</h2>
-            </div>
-            <div class="footerLeftContent__downer">
-                <button class="footerLeftContent__downer-button">
-                    <img src="" class="footerLeftContent__downer-button-icon">
-                </button>
-                <button class="footerLeftContent__downer-button">
-                    <img src="" class="footerLeftContent__downer-button-icon">
-                </button>
-                <button class="footerLeftContent__downer-button">
-                    <img src="" class="footerLeftContent__downer-button-icon">
-                </button>
-                <button class="footerLeftContent__downer-button">
-                    <img src="" class="footerLeftContent__downer-button-icon">
-                </button>
-            </div>
-            <div class="footerRightConten">
-                <button class="footerRightContent__button">Чему вы научитесь</button>
-                <button class="footerRightContent__button">Процесс обучения</button>
-                <button class="footerRightContent__button">Стоимость</button>
-                <button class="footerRightContent__button">Контакты</button>
-                <button class="footerRightContent__button">Регистрация</button>
-            </div>
-            <div class="footerRightConten">
-                <button class="footerRightContent__button" onclick="copyNumber()">+7 (499) 348 93 96</button>
-                <p class="footerRightContent__button-text">info@code.ru</p>
-            </div>
-        </div>
-    </div>
-    <div class="footerBottomContainer">
-        <p class="footerBottomContent__text">© 2023 — Все права защищены</p>
-        <p class="footerBottomContent__text">Пользовательское соглашение</p>
-        <p class="footerBottomContent__text">Политика конфиденциальности</p>
-    </div>
+      </div>
+      
+    
     <script src="{{url_for('static', filename="js/swiper-bundle.min.js")}}"></script>
     <script src="{{url_for('static', filename="js/fancybox.umd.js")}}"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=beddefd3-862f-41cb-9a21-e78664de83d5&lang=ru_RU"></script>
     <script defer src="{{url_for('static', filename="js/script.js")}}"></script>
 </body>
 
