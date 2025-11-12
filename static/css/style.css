@@ -8,6 +8,7 @@
 html,
 body {
     height: 100%;
+    cursor: url("/static/img/cursor.png") 16 16, auto;
 }
 
 html {
@@ -291,7 +292,7 @@ img {
 /* ---------- КОНТЕЙНЕР С ИЛЛЮСТРАЦИЕЙ И КОЛЬЦАМИ ---------- */
 .BannerContent__img-container {
     position: relative;
-    background: #f6f9fc;
+    background: transparent;
     border-radius: 18px;
     overflow: hidden;
 }
