@@ -1,0 +1,48 @@
+:root {
+    --bg: #f6f9fc;
+    --ring: rgba(40, 120, 180, .12);
+    /* цвет колец */
+    --stroke: 2px;
+    /* толщина кольца */
+    --gap: 110px;
+    /* шаг между кольцами */
+    --radius: clamp(420px, 40vw, 680px);
+    /* где остановить кольца */
+    --cx: 62%;
+    /* смещение центра по X */
+    --cy: 55%;
+    /* смещение центра по Y */
+}
+
+.BannerContent__img-container {
+    position: relative;
+    background: var(--bg);
+    aspect-ratio: 16 / 9;
+    /* только для демо */
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+/* Фон с кольцами */
+.BannerContent__img-container::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    /* Слой 1: перекрываем всё за пределами нужного радиуса цветом фона */
+    background:
+        radial-gradient(circle at var(--cx) var(--cy),
+            transparent 0 calc(var(--radius) - 40px),
+            var(--bg) var(--radius)),
+        /* Слой 2: повторяющиеся концентрические кольца */
+        repeating-radial-gradient(circle at var(--cx) var(--cy),
+            var(--ring) 0 var(--stroke),
+            transparent var(--stroke) var(--gap));
+    z-index: 0;
+}
+
+.BannerContent__img {
+    position: relative;
+    z-index: 1;
+    width: min(520px, 70%);
+}
