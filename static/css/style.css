@@ -5,10 +5,34 @@
     box-sizing: border-box;
 }
 
+/*Подключение шрифта*/
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
 html,
 body {
     height: 100%;
     cursor: url("/static/img/cursor.png") 16 16, auto;
+    cursor: hide;
 }
 
 html {
@@ -17,8 +41,8 @@ html {
 
 body {
     margin: 0;
-    font-family: -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-    color: #1f2533;
+    font-family: 'Poppins', sans-serif;
+    color: #22253B;
     background: #f4f6fb;
     line-height: 1.45;
     padding-bottom: var(--safe-bottom);
@@ -28,6 +52,29 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+hr {
+    border: none;
+    background-color: #DEDEDE;
+    color: #DEDEDE;
+    height: 1px;
+    width: 70%;
+    float: left;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #F15525;
+    text-decoration: none;
 }
 
 .container {
@@ -52,7 +99,7 @@ img {
 }
 
 .btn:hover {
-    background: #eb4a12;
+    background: #38BFF2;
 }
 
 .btn:active {
@@ -89,16 +136,13 @@ img {
 .nav {
     display: flex;
     gap: 28px;
+    text-decoration: none;
 }
 
 .nav a {
-    color: #1f2533;
+    color: #22253B;
     text-decoration: none;
     font-weight: 500;
-}
-
-.nav a:hover {
-    text-decoration: underline;
 }
 
 .phone {
@@ -169,7 +213,7 @@ img {
 }
 
 .mobileMenu a {
-    color: #1f2533;
+    color: #22253B;
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
@@ -192,7 +236,7 @@ img {
 .banner .swiper-button-prev,
 .banner .swiper-button-next {
     top: 50%;
-    translate: 0 -50%;
+    /*translate: 0 -50%;*/
     width: 48px;
     height: 48px;
     border-radius: 14px;
@@ -227,15 +271,33 @@ img {
     transform: rotate(45deg);
 }
 
+.banner__swiper {
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+
+
 .slide {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     align-items: center;
     gap: 24px;
+    height: -webkit-fill-available;
+    padding-inline: 60px;
+    padding-block: 30px;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slide__left {
+    padding-left: 45px;
 }
 
 .slide__left h2 {
-    font-size: 40px;
+    font-size: 31px;
     line-height: 1.15;
     margin: 0 0 12px;
 }
@@ -250,8 +312,14 @@ img {
 }
 
 .swiper-slide {
-    background-image: url('../img/Mask.svg');
+    /*background-image: url('../img/Mask.svg');*/
+    height: -webkit-fill-available;
     padding-inline: 60px;
+    padding-block: 30px;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* — эффект колец за ноутбуком —  */
@@ -301,9 +369,9 @@ img {
 .laptop {
     position: relative;
     z-index: 1;
-    width: clamp(340px, 30vw, 500px);
+    width: clamp(340px, 20vw, 500px);
     /* меньше, чем было */
-    max-height: 420px;
+    max-height: 300px;
     object-fit: contain;
     margin-inline: auto;
     background-color: transparent;
@@ -323,6 +391,15 @@ img {
     background: #f05a28;
 }
 
+.swipe-slide__background {
+    position: fixed;
+    z-index: -1;
+    width: 90%;
+    height: -webkit-fill-available;
+    object-fit: cover;
+    border-radius: 42px;
+}
+
 /* ====== FEATURES (Flexbox) ====== */
 .section-title {
     text-align: center;
@@ -339,8 +416,7 @@ img {
 
 .feature {
     flex: 1 1 260px;
-    max-width: 340px;
-    min-height: 210px;
+    max-width: 300px;
     background: #fff;
     border-radius: 20px;
     padding: 22px;
@@ -349,6 +425,8 @@ img {
     gap: 10px;
     text-align: center;
     box-shadow: 0 12px 32px rgba(16, 43, 76, .05);
+    aspect-ratio: 1 / 1;
+    justify-content: center;
 }
 
 .feature img {
@@ -680,11 +758,12 @@ footer {
 }
 
 .footerLeftContent__downer-button {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     border: 0;
     border-radius: 50%;
-    background: #23293d;
+    background-color: #23293d;
+    color: white;
     display: grid;
     place-items: center;
     cursor: pointer;
@@ -692,14 +771,13 @@ footer {
 }
 
 .footerLeftContent__downer-button:hover {
-    transform: translateY(-2px);
+    background-color: #F15525;
     opacity: .9;
 }
 
 .footerLeftContent__downer-button-icon {
     width: 26px;
     height: 26px;
-    filter: invert(1);
 }
 
 /* — средняя колонка: ссылки —  */
@@ -719,12 +797,12 @@ footer {
     padding: 0;
     text-align: left;
     font-size: 20px;
-    color: #1f2533;
+    color: #22253B;
     cursor: pointer;
 }
 
 .footerRightContent__button:hover {
-    text-decoration: underline;
+    color: #F15525;
 }
 
 /* — правая колонка: телефон + email — */
@@ -762,7 +840,6 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     translate: 0 -8px;
-    margin-bottom: clamp(32px, 4vh, 64px);
 }
 
 .footerBottomContent__text {
@@ -819,4 +896,68 @@ footer {
     .help__row>img {
         aspect-ratio: 16 / 9;
     }
+}
+
+/* сама круглая оранжевая кнопка */
+.banner .swiper-button-prev,
+.banner .swiper-button-next {
+    top: 50%;
+    /*transform: translateY(-50%);*/
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #f05a28;
+    box-shadow: 0 10px 26px rgba(16, 33, 61, 0.18);
+
+}
+
+.banner .swiper-button-prev {
+    background-color: #f05a28;
+    color: #fff;
+}
+
+.banner .swiper-button-next {
+    background-color: #ffffff;
+    color: #000;
+}
+
+/* чтобы не было видно стандартного svg */
+.banner .swiper-button-prev .swiper-navigation-icon,
+.banner .swiper-button-next .swiper-navigation-icon {
+    display: none !important;
+}
+
+/* убиваем стандартный «чеврон» из ::after Swiper'а */
+.banner .swiper-button-prev::after,
+.banner .swiper-button-next::after {
+    content: "" !important;
+    border: 0 !important;
+    background: none !important;
+}
+
+/* рисуем свои стрелочки текстом */
+.banner .swiper-button-prev::before,
+.banner .swiper-button-next::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+
+}
+
+.banner .swiper-button-prev::before {
+    content: "←";
+}
+
+.banner .swiper-button-next::before {
+    color: #000;
+    content: "→";
+}
+
+.email {
+    color: #22253B;
 }

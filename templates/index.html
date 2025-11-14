@@ -2,197 +2,208 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename="css/style.css")}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename="css/swiper-bundle.min.css")}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename="css/fancybox.css")}}" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename="css/swiper-bundle.min.css")}}">
+  <link rel="stylesheet" href="{{url_for('static', filename="css/fancybox.css")}}">
+  <link rel="stylesheet" href="{{url_for('static', filename="css/style.css")}}">
 
-    <title>Document</title>
+  <title>Document</title>
 </head>
 
 <body>
-    <!--Верхняя часть сайта-->
-    <header class="header">
-        <div class="container header__row">
-          <a class="logo" href="/">
-            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="CoDe">
-          </a>
-      
-          <nav class="nav">
-            <a href="#learn">Чему вы научитесь</a>
-            <a href="#process">Процесс обучения</a>
-            <a href="#price">Стоимость</a>
-            <a href="#contacts">Контакты</a>
-          </nav>
-      
-          <a class="phone" href="tel:+74993489396">+7 (499) 348 93 96</a>
-      
-          <button class="burger" aria-label="Открыть меню"><span></span></button>
-        </div>
-      </header>
-    
-    <!-- Мобильное меню -->
-    <aside class="mobileMenu" id="mobileMenu">
-        <button class="mobileMenu__close" aria-label="Закрыть">×</button>
-            <nav>
-                <a href="#learn">Чему вы научитесь</a>
-                <a href="#process">Процесс обучения</a>
-                <a href="#price">Стоимость</a>
-                <a href="#contacts">Контакты</a>
-                <a href="#register">Регистрация</a>
-            </nav>
-        </button>
-    </aside>
-    <!--Баннер слайдер-->
-    <section class="banner">
-        <div class="container">
-          <div class="swiper banner__swiper">
-            <div class="swiper-wrapper">
-              <!-- slide 1 -->
-              <div class="swiper-slide">
-                <div class="slide">
-                  <div class="slide__left">
-                    <h2>Школа <span class="curly">{программирования}</span><br>для тех, кому нужны<br>реальные навыки,<br>а не просто сертификат</h2>
-                    <p>Закажите звонок, и наш специалист свяжется с вами в ближайшее время</p>
-                    <button class="btn" data-open-modal>Заказать звонок</button>
-                  </div>
-                  <div class="slide__right BannerContent__img-container">
+  <!--Верхняя часть сайта-->
+  <header class="header">
+    <div class="container header__row">
+      <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="CoDe">
+      </a>
 
-                    <img class="laptop" src="{{ url_for('static', filename='img/banner1.svg') }}" alt="">
-                  </div>
-                </div>
+      <nav class="nav">
+        <a href="#learn">Чему вы научитесь</a>
+        <a href="#process">Процесс обучения</a>
+        <a href="#price">Стоимость</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="phone" href="tel:+74993489396">+7 (499) 348 93 96</a>
+
+      <button class="burger" aria-label="Открыть меню"><span></span></button>
+    </div>
+  </header>
+
+  <!-- Мобильное меню -->
+  <aside class="mobileMenu" id="mobileMenu">
+    <button class="mobileMenu__close" aria-label="Закрыть">×</button>
+    <nav>
+      <a href="#learn">Чему вы научитесь</a>
+      <a href="#process">Процесс обучения</a>
+      <a href="#price">Стоимость</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#register">Регистрация</a>
+    </nav>
+    </button>
+  </aside>
+  <!--Баннер слайдер-->
+  <section class="banner">
+    <div class="container">
+      <div class="swiper banner__swiper">
+        <div class="swiper-wrapper">
+          <!-- slide 1 -->
+          <div class="swiper-slide" style="background-image: url('../static/img/mask_laptop.svg');">
+            <div class="slide">
+              <div class="slide__left">
+                <h2>Школа <span class="curly">{</span><strong>программирования</strong><span class="curly">}</span><br>для тех, кому нужны<br>реальные навыки,<br>а
+                  не просто сертификат</h2>
+                  <hr></hr><br>
+                <p>Закажите звонок, и наш специалист свяжется с вами в ближайшее время</p>
+                <button class="btn" data-open-modal>Заказать звонок&ensp;↗</button>
               </div>
-      
-              <!-- slide 2 -->
-              <div class="swiper-slide">
-                <div class="slide">
-                  <div class="slide__left">
-                    <h2>Обучение<br>через практику</h2>
-                    <p>Всё что вы узнали, вы тут же начинаете применять на практике. Вы сразу видите результаты своего труда.</p>
-                    <button class="btn" data-open-modal>Заказать звонок</button>
-                  </div>
-                  <div class="slide__right BannerContent__img-container">
-                    <img class="laptop" src="{{ url_for('static', filename='img/banner2.svg') }}" alt="">
-                  </div>
-                </div>
-              </div>
-      
-              <!-- slide 3 -->
-              <div class="swiper-slide">
-                <div class="slide">
-                  <div class="slide__left">
-                    <h2>Весь материал разбит на<br>небольшие уроки</h2>
-                    <p>Теория и практика подаются маленькими порциями. Так легче усваивать новые знания.</p>
-                    <button class="btn" data-open-modal>Заказать звонок</button>
-                  </div>
-                  <div class="slide__right BannerContent__img-container">
-                    <img class="laptop" src="{{ url_for('static', filename='img/banner3.svg') }}" alt="">
-                  </div>
-                </div>
+              <div class="slide__right BannerContent__img-container">
               </div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
           </div>
-        </div>
-      </section>
-    <!--Информационные блоки сайта-->
-    <section class="features" id="learn">
-        <div class="container">
-          <h2 class="section-title">Обучение в CoDe — это удобно и результативно</h2>
-      
-          <div class="features__grid">
-            <article class="feature">
-              <img src="{{ url_for('static', filename='img/tutorial_logo1.svg') }}" alt="">
-              <h3>Огромное количество практики</h3>
-              <p>Более 500 самостоятельных заданий и 20 полноценных больших проектов</p>
-            </article>
-      
-            <article class="feature">
-              <img src="{{ url_for('static', filename='img/tutorial_logo2.svg') }}" alt="">
-              <h3>Современные методики обучения</h3>
-              <p>Спиральное обучение: погружаемся в материал постепенно, виток за витком</p>
-            </article>
-      
-            <article class="feature">
-              <img src="{{ url_for('static', filename='img/tutorial_logo3.svg') }}" alt="">
-              <h3>Простое и понятное изложение</h3>
-              <p>Вместо заумных терминов – примеры из реального мира</p>
-            </article>
-      
-            <article class="feature">
-              <img src="{{ url_for('static', filename='img/tutorial_logo4.svg') }}" alt="">
-              <h3>Гибкий график занятий</h3>
-              <p>Учитесь в любое время в удобном для вас темпе</p>
-            </article>
-      
-            <article class="feature">
-              <img src="{{ url_for('static', filename='img/tutorial_logo5.svg') }}" alt="">
-              <h3>Прямая связь с опытными программистами</h3>
-              <p>Задавайте вопросы и отправляйте свой код на проверку</p>
-            </article>
-      
-            <article class="feature">
-              <img src="{{ url_for('static', filename='img/tutorial_logo6.svg') }}" alt="">
-              <h3>Оплата небольшими частями</h3>
-              <p>Платите только за тот материал, который сейчас изучаете</p>
-            </article>
-      
-            <article class="feature">
-              <img src="{{ url_for('static', filename='img/tutorial_logo7.svg') }}" alt="">
-              <h3>Быстрый и легкий возврат</h3>
-              <p>Если передумаете — вернем деньги за 3 рабочих дня</p>
-            </article>
-          </div>
-        </div>
-      </section>
-    <!--Модальное окно обратной связи-->
-    <section class="help" id="process">
-        <div class="container">
-          <div class="help__row">
-            <img src="{{ url_for('static', filename='img/help1.png') }}" alt="">
-            <div>
-              <h3>Помощь и поддержка</h3>
-              <p>Если в процессе обучения возникнут сложности,<br>вы всегда сможете задать вопрос своему наставнику.</p><br>
-              <p>Раз в несколько уроков вы будете получать большое задание, которое<br>нужно будет сдавать на проверку код-ревьюеру. Он внимательно<br>изучит ваш код, найдет ошибки и поможет вам стать лучше. </p>
+
+          <!-- slide 2 -->
+          <div class="swiper-slide" style="background-image: url('../static/img/mask_human.svg');">
+            <div class="slide">
+              <div class="slide__left">
+                <h2>Обучение<br>через практику</h2>
+                <hr></hr><br>
+                <p>Всё что вы узнали, вы тут же начинаете применять на практике. Вы сразу видите результаты своего
+                  труда.</p>
+                <button class="btn" data-open-modal>Заказать звонок&ensp;↗</button>
+              </div>
+              <div class="slide__right BannerContent__img-container">
+              </div>
             </div>
           </div>
-      
-          <div class="help__row help__row--reverse">
-            <div>
-              <h3>Методика обучения</h3>
-              <p>Весь учебный материал структурирован по принципу<br>«спирального обучения». Сначала вы получаете базовые знания,<br>а затем на каждом витке спирали углубляетесь в изученные темы,<br>доводя их понимание до совершенства. Такой подход упрощает<br>обучение и гарантирует, что вы не пропустите ничего важного.</p>
+
+          <!-- slide 3 -->
+          <div class="swiper-slide" style="background-image: url('../static/img/mask_people.svg');">
+            <div class="slide">
+              <div class="slide__left">
+                <h2>Весь материал разбит на<br>небольшие уроки</h2>
+                <hr></hr><br>
+                <p>Теория и практика подаются маленькими порциями. Так легче усваивать новые знания.</p>
+                <button class="btn" data-open-modal>Заказать звонок&ensp;↗</button>
+              </div>
+              <div class="slide__right BannerContent__img-container">
+                <img class="laptop"  alt="">
+              </div>
             </div>
-            <img src="{{ url_for('static', filename='img/help2.png') }}" alt="">
           </div>
         </div>
-      </section>
-    <!--Галерея фотографий-->
-    <section class="gallery">
-        <div class="container gallery__grid">
-          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g1.png') }}"><img src="{{ url_for('static', filename='img/g1.png') }}" alt=""></a>
-          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g2.png') }}"><img src="{{ url_for('static', filename='img/g2.png') }}" alt=""></a>
-          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g3.png') }}"><img src="{{ url_for('static', filename='img/g3.png') }}" alt=""></a>
-          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g4.png') }}"><img src="{{ url_for('static', filename='img/g4.png') }}" alt=""></a>
-          <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g5.png') }}"><img src="{{ url_for('static', filename='img/g5.png') }}" alt=""></a>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!--Информационные блоки сайта-->
+  <section class="features" id="learn">
+    <div class="container">
+      <h2 class="section-title">Обучение в CoDe — это удобно и результативно</h2>
+
+      <div class="features__grid">
+        <article class="feature">
+          <img src="{{ url_for('static', filename='img/tutorial_logo1.svg') }}" alt="">
+          <h3>Огромное количество практики</h3>
+          <p>Более 500 самостоятельных заданий и 20 полноценных больших проектов</p>
+        </article>
+
+        <article class="feature">
+          <img src="{{ url_for('static', filename='img/tutorial_logo2.svg') }}" alt="">
+          <h3>Современные методики обучения</h3>
+          <p>Спиральное обучение: погружаемся в материал постепенно, виток за витком</p>
+        </article>
+
+        <article class="feature">
+          <img src="{{ url_for('static', filename='img/tutorial_logo3.svg') }}" alt="">
+          <h3>Простое и понятное изложение</h3>
+          <p>Вместо заумных терминов – примеры из реального мира</p>
+        </article>
+
+        <article class="feature">
+          <img src="{{ url_for('static', filename='img/tutorial_logo4.svg') }}" alt="">
+          <h3>Гибкий график занятий</h3>
+          <p>Учитесь в любое время в удобном для вас темпе</p>
+        </article>
+
+        <article class="feature">
+          <img src="{{ url_for('static', filename='img/tutorial_logo5.svg') }}" alt="">
+          <h3>Прямая связь с опытными программистами</h3>
+          <p>Задавайте вопросы и отправляйте свой код на проверку</p>
+        </article>
+
+        <article class="feature">
+          <img src="{{ url_for('static', filename='img/tutorial_logo6.svg') }}" alt="">
+          <h3>Оплата небольшими частями</h3>
+          <p>Платите только за тот материал, который сейчас изучаете</p>
+        </article>
+
+        <article class="feature">
+          <img src="{{ url_for('static', filename='img/tutorial_logo7.svg') }}" alt="">
+          <h3>Быстрый и легкий возврат</h3>
+          <p>Если передумаете — вернем деньги за 3 рабочих дня</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!--Модальное окно обратной связи-->
+  <section class="help" id="process">
+    <div class="container">
+      <div class="help__row">
+        <img src="{{ url_for('static', filename='img/help1.png') }}" alt="">
+        <div>
+          <h3>Помощь и поддержка</h3>
+          <p>Если в процессе обучения возникнут сложности,<br>вы всегда сможете задать вопрос своему наставнику.</p><br>
+          <p>Раз в несколько уроков вы будете получать большое задание, которое<br>нужно будет сдавать на проверку
+            код-ревьюеру. Он внимательно<br>изучит ваш код, найдет ошибки и поможет вам стать лучше. </p>
         </div>
-      </section>
-    <!--Интерактивная карта-->
-    <section class="map" id="contacts">
-        <div class="container">
-          <div id="map" class="map__canvas" aria-label="Карта"></div>
+      </div>
+
+      <div class="help__row help__row--reverse">
+        <div>
+          <h3>Методика обучения</h3>
+          <p>Весь учебный материал структурирован по принципу<br>«спирального обучения». Сначала вы получаете базовые
+            знания,<br>а затем на каждом витке спирали углубляетесь в изученные темы,<br>доводя их понимание до
+            совершенства. Такой подход упрощает<br>обучение и гарантирует, что вы не пропустите ничего важного.</p>
         </div>
-      </section>
-    <!-- ВЕРХНЯЯ ЧАСТЬ ПОДВАЛА -->
-<div class="footerContainer">
+        <img src="{{ url_for('static', filename='img/help2.png') }}" alt="">
+      </div>
+    </div>
+  </section>
+  <!--Галерея фотографий-->
+  <section class="gallery">
+    <div class="container gallery__grid">
+      <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g1.png') }}"><img
+          src="{{ url_for('static', filename='img/g1.png') }}" alt=""></a>
+      <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g2.png') }}"><img
+          src="{{ url_for('static', filename='img/g2.png') }}" alt=""></a>
+      <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g3.png') }}"><img
+          src="{{ url_for('static', filename='img/g3.png') }}" alt=""></a>
+      <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g4.png') }}"><img
+          src="{{ url_for('static', filename='img/g4.png') }}" alt=""></a>
+      <a data-fancybox="gallery" href="{{ url_for('static', filename='img/g5.png') }}"><img
+          src="{{ url_for('static', filename='img/g5.png') }}" alt=""></a>
+    </div>
+  </section>
+  <!--Интерактивная карта-->
+  <section class="map" id="contacts">
+    <div class="container">
+      <div id="map" class="map__canvas" aria-label="Карта"></div>
+    </div>
+  </section>
+  <!-- ВЕРХНЯЯ ЧАСТЬ ПОДВАЛА -->
+  <div class="footerContainer">
     <div class="footerLeftContainer">
       <div class="footerLeftContent__upper">
         <img src="/static/img/logo.svg" class="footerLeftContent__upper-icon" alt="CoDe">
         <h2 class="footerLeftContent__upper-title">Школа программирования</h2>
       </div>
-  
+
       <div class="footerLeftContent__downer">
         <button class="footerLeftContent__downer-button" aria-label="Instagram">
           <img src="/static/img/ico-inst.svg" class="footerLeftContent__downer-button-icon" alt="">
@@ -207,7 +218,7 @@
           <img src="/static/img/ico-yt.svg" class="footerLeftContent__downer-button-icon" alt="">
         </button>
       </div>
-  
+
       <div class="footerRightContent">
         <button class="footerRightContent__button" data-href="#learn">Чему вы научитесь</button>
         <button class="footerRightContent__button" data-href="#process">Процесс обучения</button>
@@ -215,57 +226,59 @@
         <button class="footerRightContent__button" data-href="#contacts">Контакты</button>
         <button class="footerRightContent__button" data-href="#register">Регистрация</button>
       </div>
-  
+
       <div class="footerRightContent">
-        <button class="footerRightContent__button footerRightContent__phone"
-                onclick="copyNumber()">+7 (999) 999 99 99</button>
+        <button class="footerRightContent__button footerRightContent__phone">+7 (999) 999 99
+          99</button>
         <p class="footerRightContent__button-text">
-          <a href="mailto:info@code.ru">info@code.ru</a>
+          <a class="email">info@code.ru</a>
         </p>
       </div>
     </div>
   </div>
-  
+
   <!-- НИЖНЯЯ ПОЛОСА ПОДВАЛА -->
   <div class="footerBottomContainer">
     <p class="footerBottomContent__text">© 2023 — Все права защищены</p>
     <p class="footerBottomContent__text"><a href="#">Пользовательское соглашение</a></p>
     <p class="footerBottomContent__text"><a href="#">Политика конфиденциальности</a></p>
   </div>
-  
 
-    <!--Модальное окно «Заказать звонок»-->
-    <div class="modal" id="callbackModal" aria-hidden="true">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__dialog" role="dialog" aria-modal="true">
-          <button class="modal__close" data-close-modal aria-label="Закрыть">×</button>
-          <h2>Заказать звонок</h2>
-      
-          <form id="callbackForm" class="form">
-            <label>Имя
-              <input name="name" type="text" placeholder="Ваше имя" required>
-            </label>
-            <label>Телефон
-              <input name="phone" type="tel" placeholder="+7 XXX XXX-XX-XX" required>
-            </label>
-            <label>Email
-              <input name="email" type="email" placeholder="mail@site.com">
-            </label>
-            <label>Сообщение
-              <textarea name="msg" rows="4" placeholder="Ваше сообщение…"></textarea>
-            </label>
-      
-            <p class="form__agree">Нажимая «Отправить», вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
-            <button type="submit" class="btn btn--lg">Отправить</button>
-          </form>
-        </div>
-      </div>
-      
-    
-    <script src="{{url_for('static', filename="js/swiper-bundle.min.js")}}"></script>
-    <script src="{{url_for('static', filename="js/fancybox.umd.js")}}"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=beddefd3-862f-41cb-9a21-e78664de83d5&lang=ru_RU"></script>
-    <script defer src="{{url_for('static', filename="js/script.js")}}"></script>
+
+  <!--Модальное окно «Заказать звонок»-->
+  <div class="modal" id="callbackModal" aria-hidden="true">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+      <h2>Заказать звонок</h2>
+
+      <form id="callbackForm" class="form">
+        <label>Имя
+          <input name="name" type="text" placeholder="Ваше имя" required>
+        </label>
+        <label>Телефон
+          <input name="phone" type="tel" placeholder="+7 XXX XXX-XX-XX" required>
+        </label>
+        <label>Email
+          <input name="email" type="email" placeholder="mail@site.com">
+        </label>
+        <label>Сообщение
+          <textarea name="msg" rows="4" placeholder="Ваше сообщение…"></textarea>
+        </label>
+
+        <p class="form__agree">Нажимая «Отправить», вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+        <button type="submit" class="btn btn--lg">Отправить&ensp;↗</button>
+      </form>
+    </div>
+  </div>
+
+  <hr></hr>
+
+
+  <script src="{{url_for('static', filename="js/swiper-bundle.min.js")}}"></script>
+  <script src="{{url_for('static', filename="js/fancybox.umd.js")}}"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=beddefd3-862f-41cb-9a21-e78664de83d5&lang=ru_RU"></script>
+  <script defer src="{{url_for('static', filename="js/script.js")}}"></script>
 </body>
 
 </html>

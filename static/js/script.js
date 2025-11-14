@@ -34,8 +34,9 @@ window.addEventListener("keydown", (e) => {
 const slider = new Swiper(".banner__swiper", {
     loop: true,
     speed: 700,
-    //autoplay: { delay: 4500, disableOnInteraction: false },
-    pagination: { el: ".swiper-pagination", clickable: true },
+    effect: 'fade',
+    autoplay: { delay: 4500, disableOnInteraction: false },
+    //pagination: { el: ".swiper-pagination", clickable: false },
     navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
 });
 
